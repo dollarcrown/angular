@@ -1,0 +1,252 @@
+@charset "UTF-8";
+@import url(reset.css);
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes bounceInUp {
+  0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0); }
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0); }
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes bounceInUp {
+  0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    -ms-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    -ms-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0); }
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    -ms-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0); }
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    -ms-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp; }
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: '微软雅黑'; }
+
+p, a, span {
+  font-family: '微软雅黑'; }
+
+a {
+  text-decoration: none; }
+
+html, body, .container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-size: 100%; }
+
+.container {
+  background: #f6514b; }
+
+.title {
+  width: 100%;
+  height: 44px;
+  background: #fff;
+  text-align: center;
+  line-height: 44px;
+  position: relative; }
+  .title h2 {
+    font-size: 18px; }
+  .title .back {
+    position: absolute;
+    background: url(../img/back.png) no-repeat;
+    background-size: 11px 20px;
+    left: 15px;
+    top: 50%;
+    margin-top: -10px;
+    width: 11px;
+    height: 20px; }
+
+.btn {
+  width: 118px;
+  height: 52px;
+  background: url(../img/btn-bg.png) no-repeat 7px 5px;
+  background-size: 100%;
+  position: absolute;
+  text-align: center;
+  color: #cc0000;
+  font-size: 20px;
+  line-height: 52px;
+  font-weight: 600; }
+
+.page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+.unlike .body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: url(../img/bg.png) no-repeat center 3rem;
+  background-size: 87% 70%;
+  left: -10px; }
+.unlike .unlike-shu {
+  width: 6rem;
+  height: 5rem;
+  position: absolute;
+  background: url(../img/foot.png) no-repeat center;
+  background-size: 100% 100%;
+  bottom: 20%; }
+
+.unlike-box {
+  position: absolute;
+  width: 70%;
+  height: 50%;
+  left: 50%;
+  top: 15%;
+  margin-left: -35%; }
+  .unlike-box .unlike-title {
+    width: 100%;
+    height: 2rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #b00600;
+    font-weight: bold; }
+  .unlike-box .unlike-btn {
+    left: 50%;
+    margin-left: -59px;
+    bottom: 0; }
+
+.sel {
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  width: 80%;
+  height: 35px;
+  margin: auto; }
+  .sel span {
+    -webkit-flex-grow: 1;
+    text-align: center;
+    position: relative;
+    font-size: 20px;
+    line-height: 35px; }
+  .sel label, .sel input {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    margin-top: -10px;
+    border: 1px solid #999;
+    border-radius: 50%; }
+  .sel input:checked + label:before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 8px;
+    border-left: 2px solid #999;
+    border-bottom: 2px solid #999;
+    position: absolute;
+    left: 3px;
+    bottom: 6px;
+    z-index: 99;
+    -webkit-transform: rotate(-45deg); }
+  .sel label.checked:before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 8px;
+    border-left: 2px solid #999;
+    border-bottom: 2px solid #999;
+    position: absolute;
+    left: 2px;
+    bottom: 6px;
+    -webkit-transform: rotate(-45deg); }
+  .sel input {
+    z-index: 2;
+    opacity: 0;
+    margin-right: 15px; }
+
+.menu {
+  width: 100%;
+  float: left;
+  margin-top: 25px;
+  padding: 10px 8px;
+  border: 1px solid #999;
+  position: relative; }
+  .menu .arrow {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    border-top: 1px solid #999;
+    border-left: 1px solid #999;
+    position: absolute;
+    right: 32%;
+    top: -8px;
+    -webkit-transform: rotate(45deg);
+    background: #fff3bf; }
+  .menu .item {
+    border-radius: 8px;
+    float: left;
+    margin: 1%;
+    position: relative;
+    width: 30%;
+    height: 30px; }
+    .menu .item input, .menu .item label {
+      position: absolute;
+      display: inline-block;
+      width: 100%;
+      height: 30px;
+      border-radius: 8px;
+      left: 0;
+      top: 0;
+      text-align: center;
+      line-height: 30px;
+      font-size: 0.9rem; }
+    .menu .item label {
+      border: 1px solid #999; }
+    .menu .item input {
+      z-index: 2;
+      opacity: 0; }
+    .menu .item input:checked + label {
+      background: #f6514b;
+      color: #fff;
+      border: 1px solid #f6514b; }
+
+/*# sourceMappingURL=foot.css.map */

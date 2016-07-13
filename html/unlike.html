@@ -1,0 +1,18 @@
+<div class='container'>
+	<div class="page unlike">
+        <div class="title"><span class="back"></span><h2>基本信息</h2></div>
+        <div class="body">
+        	<div class='unlike-box'>
+        		<h3 class='unlike-title'>不喜欢吃的食物</h3>
+        		<div class='unlike-check'>
+        			<span class='unlike-ch' ng-repeat='x in result.unlike'>{{x.title}}<input type="checkbox" class='Cbox checked' id='{{x.id}}'><label for='{{x.id}}'></label></span>
+        		</div>
+				<a  class="btn unlike-btn" ng-click="test()">开始测试</a>
+        	</div>
+        	<div class="unlike-shu"></div>
+        	
+        </div>
+    </div>
+</div>
+
+F:/web/

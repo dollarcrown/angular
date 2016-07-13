@@ -1,0 +1,255 @@
+@charset "UTF-8";
+@import url(reset.css);
+/* line 3, public.scss */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box; }
+
+/* line 9, public.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: '微软雅黑'; }
+
+/* line 16, public.scss */
+p, a, span, div {
+  font-family: '微软雅黑'; }
+
+/* line 19, public.scss */
+a {
+  text-decoration: none; }
+
+/* line 34, public.scss */
+html, body, .container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-size: 100%; }
+
+/* line 39, public.scss */
+.title {
+  width: 100%;
+  height: 44px;
+  background: #fff;
+  text-align: center;
+  line-height: 44px;
+  position: relative; }
+  /* line 46, public.scss */
+  .title h2 {
+    font-size: 18px; }
+  /* line 49, public.scss */
+  .title .back {
+    position: absolute;
+    background: url(../img/back.png) no-repeat;
+    background-size: 11px 20px;
+    left: 15px;
+    top: 50%;
+    margin-top: -10px;
+    width: 11px;
+    height: 20px; }
+
+/* line 60, public.scss */
+.btn {
+  width: 118px;
+  height: 52px;
+  background: url(../img/btn-bg.png) no-repeat 7px 5px;
+  background-size: 100%;
+  position: absolute;
+  text-align: center;
+  color: #cc0000;
+  font-size: 20px;
+  line-height: 52px;
+  font-weight: 600; }
+
+/* line 4, result.scss */
+.back-hide {
+  display: none; }
+
+/* line 34, result.scss */
+.result-container {
+  width: 100%;
+  height: 100%;
+  background: #fbfbfb;
+  position: relative; }
+  /* line 39, result.scss */
+  .result-container .title {
+    position: absolute;
+    z-index: 99; }
+
+/* 整个盒子 */
+/* line 46, result.scss */
+.result-body {
+  width: 100%;
+  height: 100%;
+  padding-top: 44px;
+  overflow: auto; }
+  /* line 51, result.scss */
+  .result-body .result-jiao {
+    position: absolute;
+    background: url(../img/back.png) no-repeat;
+    background-size: 9px 18px;
+    right: 15px;
+    top: 50%;
+    margin-top: -10px;
+    width: 9px;
+    height: 18px;
+    -webkit-transform: rotate(180deg); }
+
+/* 体质头部 */
+/* line 64, result.scss */
+.result-physique {
+  margin-bottom: 15px; }
+  /* line 66, result.scss */
+  .result-physique .result-physique-top {
+    background: #f6514b;
+    padding: 20px 23px;
+    color: #fff;
+    position: relative; }
+    /* line 71, result.scss */
+    .result-physique .result-physique-top .result-physique-head {
+      font-size: 12px; }
+    /* line 74, result.scss */
+    .result-physique .result-physique-top .result-physique-title {
+      font-size: 15px; }
+    /* line 77, result.scss */
+    .result-physique .result-physique-top .result-physique-introduce {
+      font-size: 12px;
+      color: #ffc5c3; }
+
+/*  体质内容 */
+/* line 86, result.scss */
+.result-physique-content {
+  background: #fff;
+  position: relative; }
+  /* line 89, result.scss */
+  .result-physique-content::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 14px;
+    background: #fff;
+    -webkit-transform: rotate(45deg);
+    top: -6px;
+    left: 50%;
+    margin-left: -5px; }
+  /* line 100, result.scss */
+  .result-physique-content ul {
+    color: #333; }
+    /* line 103, result.scss */
+    .result-physique-content ul li {
+      font-size: 12px;
+      line-height: 1.6; }
+  /* line 108, result.scss */
+  .result-physique-content .result-physique-content-duan {
+    padding: 23px 23px 10px 23px; }
+    /* line 110, result.scss */
+    .result-physique-content .result-physique-content-duan li {
+      position: relative; }
+      /* line 112, result.scss */
+      .result-physique-content .result-physique-content-duan li span {
+        position: absolute;
+        left: 0; }
+      /* line 116, result.scss */
+      .result-physique-content .result-physique-content-duan li p {
+        padding-left: 60px; }
+  /* line 122, result.scss */
+  .result-physique-content .result-physique-content-question {
+    padding: 0 23px 23px 23px; }
+    /* line 124, result.scss */
+    .result-physique-content .result-physique-content-question p {
+      background: url(../img/star.png) no-repeat left center;
+      background-size: 9px 9px;
+      line-height: 35px;
+      padding-left: 15px; }
+    /* line 130, result.scss */
+    .result-physique-content .result-physique-content-question li {
+      list-style-type: disc;
+      margin-left: 18px; }
+  /* line 137, result.scss */
+  .result-physique-content .result-ready-all {
+    padding: 0;
+    height: 44px;
+    line-height: 44px;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    font-size: 13px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee; }
+    /* line 9, result.scss */
+    .result-physique-content .result-ready-all::after {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-bottom: 1px solid #999;
+      border-right: 1px solid #999;
+      -webkit-transform: rotate(45deg);
+      -webkit-transition: .1s;
+      margin: 0 7px 4px; }
+  /* line 22, result.scss */
+  .result-physique-content .readyAllJiao::after {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+    -webkit-transform: rotate(-45deg);
+    -webkit-transition: .1s;
+    margin: 0 7px -2px; }
+  /* line 152, result.scss */
+  .result-physique-content .readyAllJiao::after {
+    border-bottom-color: #fFF; }
+
+/* 吃，不吃的头部 */
+/* line 162, result.scss */
+.result-eat-top, .result-no-eat-top {
+  height: 44px;
+  width: 100%;
+  background: #fff;
+  line-height: 44px;
+  padding: 0 23px;
+  color: #f6514b;
+  border-bottom: 1px solid #eee;
+  position: relative; }
+  /* line 171, result.scss */
+  .result-eat-top .result-jiao, .result-no-eat-top .result-jiao {
+    -webkit-transform: rotate(-90deg); }
+  /* line 174, result.scss */
+  .result-eat-top .result-jiao-bj, .result-no-eat-top .result-jiao-bj {
+    -webkit-transform: rotate(90deg); }
+
+/* 吃，不吃的内容 */
+/* line 180, result.scss */
+.result-eat .result-eat-content, .result-eat .result-no-eat-content, .result-no-eat .result-eat-content, .result-no-eat .result-no-eat-content {
+  padding: 10px;
+  width: 100%; }
+  /* line 183, result.scss */
+  .result-eat .result-eat-content div, .result-eat .result-no-eat-content div, .result-no-eat .result-eat-content div, .result-no-eat .result-no-eat-content div {
+    width: 50%;
+    float: left;
+    text-align: center; }
+    /* line 187, result.scss */
+    .result-eat .result-eat-content div img, .result-eat .result-no-eat-content div img, .result-no-eat .result-eat-content div img, .result-no-eat .result-no-eat-content div img {
+      width: 135px;
+      height: 135px; }
+    /* line 192, result.scss */
+    .result-eat .result-eat-content div p, .result-eat .result-no-eat-content div p, .result-no-eat .result-eat-content div p, .result-no-eat .result-no-eat-content div p {
+      width: 95%;
+      height: 35px;
+      line-height: 35px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 14px;
+      color: #333;
+      text-align: center; }
+
+/* line 210, result.scss */
+.clear {
+  clear: both; }
+
+/*# sourceMappingURL=result.css.map */

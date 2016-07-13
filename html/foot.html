@@ -1,0 +1,25 @@
+
+<div class='container'>
+		<div class="page unlike">
+	        <div class="title"><span class="back"></span><h2>基本信息</h2></div>
+	        <div class="body">
+	        	<div class='unlike-box'>
+	        		<h3 class='unlike-title'>有无过敏食物</h3>
+	        		<div class='unlike-check'>
+	        			<div class="sel">
+	        				<span><input type="radio" id="none" name="a" class="radio no" ng-click='none()'><label for="none"></label>无</span>
+	        				<span><input type="radio" id="have" name="a" class="radio no" ng-click='have()' checked><label for="have"></label>有</span>
+	        			</div>
+	        			<div class="menu" ng-hide='falg'>
+	        				<span class="arrow"></span>
+	        				<span class="item" ng-repeat="h in result.foot"><input type="checkbox" id="b"><label for="b">{{h.val}}</label></span>
+
+	        			</div>
+	        		</div>
+					<a href="#/unlike" class="btn unlike-btn">继续</a>
+	        	</div>
+	        	<div class="unlike-shu"></div>
+	        	
+	        </div>
+	    </div>
+    </div>	

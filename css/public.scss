@@ -1,0 +1,206 @@
+@charset "utf-8";
+@import 'reset.css';
+.animated {//公共类(必须要加的类)
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes bounceInUp {
+  0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceInUp {
+  0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    -ms-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    -ms-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    -ms-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    -ms-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp;
+}
+*{
+	margin:0;
+	padding:0;
+	list-style:none;
+	box-sizing:border-box;
+}
+h1,h2,h3,h4,h5,h6{
+	font:{
+		size:14px;
+		weight:400;
+		family:'微软雅黑';
+	}
+}
+p,a,span{
+	font-family:'微软雅黑';
+}
+a{
+	text-decoration:none;
+}
+$border-c:#999;
+$text-c:#333;
+$high-c:#f6514b;
+$btn-c:#cc0000;
+@mixin full{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+@mixin pos($pos:absolute){
+	position:$pos;
+}
+@mixin box($way){
+	display:-webkit-flex;
+	-webkit-flex-direction:$way;
+}
+@mixin flex($n){
+	-webkit-flex-grow:$n;
+}
+html,body,.container{
+	@include full;
+	font-size:100%;
+}
+.container{
+	background:$high-c;
+}
+.title{
+	width:100%;
+	height:44px;
+	background:#fff;
+	text-align:center;
+	line-height:44px;
+	@include pos(relative);
+	h2{
+		font-size:18px;
+	}
+	.back{
+		@include pos;
+		background:url(../img/back.png) no-repeat;
+		background-size:11px 20px;
+		left:15px;
+		top:50%;
+		margin-top:-10px;
+		width:11px;
+		height:20px;
+	}
+}
+.btn{
+	width:118px;
+	height:52px;
+	background:url(../img/btn-bg.png) no-repeat 7px 5px;
+	background-size:100%;
+	@include pos;
+	text-align:center;
+	color:$btn-c;
+	font-size:20px;
+	line-height:52px;
+	font-weight:600;
+}
+.page{
+	@include full;
+}
+.unlike{
+	.body{
+		@include full;
+		@include pos(relative);
+		background:url(../img/bg.png) no-repeat center 3rem;
+		background-size:87% 70%;
+		left:-10px;
+	}
+	.unlike-shu{
+		width:6rem;
+		height:5rem;
+		@include pos;
+		background:url(../img/foot.png) no-repeat center;
+		background-size:100% 100%;
+		bottom:20%;
+	}
+}
+
+.unlike-box{
+	@include pos;
+	width:70%;
+	height:50%;
+	left:50%;
+	top:15%;
+	margin-left:-35%;
+	.unlike-title{
+		width:100%;
+		height:2rem;
+		text-align:center;
+		font-size:1rem;
+		color:#b00600;
+		font-weight:bold;
+	}
+	.unlike-btn{
+		left:50%;
+		margin-left:-59px;
+		bottom:0;
+	}
+
+}

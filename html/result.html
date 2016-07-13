@@ -1,0 +1,63 @@
+
+	<div class="page result-container ">
+        <div class="title"><span class="back" ng-hide='resultTitle' ng-click='resultTitleBack()'></span><h2>{{result.name}}</h2></div>
+        <div class="result-body">
+            <!-- 体质 -->
+        	<div class="result-physique" >
+        		<div class="result-physique-top" ng-hide='resultPTop1'>
+        			<span class="result-physique-head">您的体质为：</span>
+            		<h1 class="result-physique-title">{{result.title}}</h1>
+            		<p class="result-physique-introduce" ng-hide="physiqueP">
+            			{{result.heart}}
+            		</p>
+    				<div class="result-jiao" ng-click="resultPhysique()"></div>
+        	    </div>
+                <div class="result-physique-top" ng-hide='resultPTop2'>您的体质为：{{result.title}}</div>
+            	<div class="result-physique-content ng-binding" ng-hide='myVarPhysique'>
+            		<ul class="result-physique-content-duan">
+            			<li><span>总体特征：</span><p>{{result.expr}}</p></li>
+            			<li><span>总体特征：</span><p>{{result.expr}}</p></li>
+            			<li><span>总体特征：</span><p>{{result.expr}}</p></li>
+            			<li><span>总体特征：</span><p>{{result.expr}}</p></li>
+            			<li><span>总体特征：</span><p>{{result.expr}}</p></li>
+            		</ul>
+            		<div  ng-show='myVarReadAll' >
+                        <ul class="result-physique-content-question" ng-repeat='x in result.question'>
+                            <p>{{x.title}}</p>
+                            <li ng-repeat='j in result.item'>{{j.a}}</li>
+                        </ul>      
+                    </div>
+    				<div class="result-ready-all" ng-class="{'readyAllJiao':AllJiao}"  ng-click="readyAll();AllJiao=!AllJiao">阅读全文</div>
+            	</div>
+            </div>
+
+             <!-- 宜食 -->
+        	<div class="result-eat">
+        		<div class="result-eat-top">
+        			宜食
+        			<div class="result-jiao" ng-class="{'result-jiao-bj' : jiao1}" ng-click="resultEat(); jiao1=!jiao1"></div>
+        		</div>
+        		<div class="result-eat-content" ng-hide='myVarresultEat'>
+			        <div ng-repeat='h in result.img'>
+			        	<img src="{{h.src}}" alt="">
+			        	<p>{{h.title}}</p>
+			        </div>
+				</div>
+                <div class="clear"></div>
+        	</div>
+        	
+            <!-- 不宜食 -->
+        	<div class="result-no-eat">
+        		<div class="result-no-eat-top">
+        			不宜食
+        			<div class="result-jiao" ng-class="{'result-jiao-bj' : jiao2}" ng-click="resultNoEat(); jiao2=!jiao2"></div>
+        		</div>
+        		<div class="result-no-eat-content" ng-hide='myVarresultNoEat'>
+			        <div ng-repeat='h in result.img'>
+                        <img src="{{h.src}}" alt="">
+                        <p>{{h.title}}</p>
+                    </div>
+				</div>
+        	</div>
+        </div>
+    </div>

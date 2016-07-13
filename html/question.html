@@ -1,0 +1,23 @@
+<div class="page question">
+    <div class="title">
+    	<span class="back"></span>
+    	<h2>你感觉？</h2>
+    </div>
+    <div class="body">
+    	<div class="zt">
+    		<div class="item" ng-repeat='x in result.question'>
+    			<h4>{{x.title}}</h4>
+	    		<p class="zt-span">
+	    			<span><input id="ra1{{x.id}}" type="radio" name='{{x.id}}'><label for="ra1{{x.id}}">没有</label></span>
+	    			<span><input id="ra2{{x.id}}"  type="radio" name='{{x.id}}'><label for="ra2{{x.id}}">很少</label></span>
+	    			<span><input id="ra3{{x.id}}"  type="radio" name='{{x.id}}'><label for="ra3{{x.id}}">有时</label></span>
+	    			<span><input id="ra4{{x.id}}"  type="radio" name='{{x.id}}'><label for="ra4{{x.id}}">经常</label></span>
+	    			<span><input id="ra5{{x.id}}"  type="radio" name='{{x.id}}'><label for="ra5{{x.id}}">总是</label></span>
+	    		</p>
+    		</div>
+    		
+    	</div>
+    	<a class="btn btnQ" ng-click="qClick()">提交</a>
+    </div>
+</div>
+

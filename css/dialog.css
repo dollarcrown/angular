@@ -1,0 +1,230 @@
+@charset "UTF-8";
+@import url(reset.css);
+@import url(reset.css);
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes bounceInUp {
+  0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0); }
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0); }
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes bounceInUp {
+  0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    -ms-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    -ms-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0); }
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    -ms-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0); }
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    -ms-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp; }
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: '微软雅黑'; }
+
+p, a, span {
+  font-family: '微软雅黑'; }
+
+a {
+  text-decoration: none; }
+
+html, body, .container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-size: 100%; }
+
+.container {
+  background: #f6514b; }
+
+.title {
+  width: 100%;
+  height: 44px;
+  background: #fff;
+  text-align: center;
+  line-height: 44px;
+  position: relative; }
+  .title h2 {
+    font-size: 18px; }
+  .title .back {
+    position: absolute;
+    background: url(../img/back.png) no-repeat;
+    background-size: 11px 20px;
+    left: 15px;
+    top: 50%;
+    margin-top: -10px;
+    width: 11px;
+    height: 20px; }
+
+.btn {
+  width: 118px;
+  height: 52px;
+  background: url(../img/btn-bg.png) no-repeat 7px 5px;
+  background-size: 100%;
+  position: absolute;
+  text-align: center;
+  color: #cc0000;
+  font-size: 20px;
+  line-height: 52px;
+  font-weight: 600; }
+
+.page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+.unlike .body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: url(../img/bg.png) no-repeat center 3rem;
+  background-size: 87% 70%;
+  left: -10px; }
+.unlike .unlike-shu {
+  width: 6rem;
+  height: 5rem;
+  position: absolute;
+  background: url(../img/foot.png) no-repeat center;
+  background-size: 100% 100%;
+  bottom: 20%; }
+
+.unlike-box {
+  position: absolute;
+  width: 70%;
+  height: 50%;
+  left: 50%;
+  top: 15%;
+  margin-left: -35%; }
+  .unlike-box .unlike-title {
+    width: 100%;
+    height: 2rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #b00600;
+    font-weight: bold; }
+  .unlike-box .unlike-btn {
+    left: 50%;
+    margin-left: -59px;
+    bottom: 0; }
+
+.mask {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999; }
+
+.dialog-box {
+  width: 87%;
+  height: 313px;
+  background: #fff3bf;
+  border-radius: 2px;
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  overflow: hidden;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 999999999; }
+  .dialog-box .dialog-title {
+    background: #fff3bf;
+    height: 40px;
+    position: relative; }
+    .dialog-box .dialog-title img {
+      position: absolute;
+      right: 17px;
+      top: 0; }
+  .dialog-box .dialog-img {
+    width: 100%;
+    height: 103px;
+    position: relative; }
+    .dialog-box .dialog-img img {
+      width: 215px;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -108px; }
+  .dialog-box .dialog-msg {
+    width: 80%;
+    margin: 0 auto;
+    -webkit-flex: 1;
+    line-height: 20px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    color: #333;
+    margin-top: 4%; }
+  .dialog-box .dialog-btn-wrap {
+    width: 100%;
+    height: 80px;
+    background: #faeaa4;
+    position: relative; }
+    .dialog-box .dialog-btn-wrap .dialog-btn {
+      -webkit-flex: 1;
+      position: absolute;
+      top: 50%;
+      margin-top: -29px;
+      margin-left: -59px;
+      left: 50%;
+      cursor: pointer; }
+    .dialog-box .dialog-btn-wrap .no {
+      margin-left: 50px; }
+
+.dialog-btn a {
+  color: #cc0000; }
+
+/*# sourceMappingURL=dialog.css.map */

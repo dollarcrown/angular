@@ -1,0 +1,127 @@
+
+@import "public.scss";
+
+.sel{
+	@include box(row);
+	width:80%;
+	height:35px;
+	margin:auto;
+	span{
+		@include flex(1);
+		text-align:center;
+		@include pos(relative);
+		font-size:20px;
+		line-height:35px;
+	}
+	label,input{
+		width:20px;
+		height:20px;
+		@include pos;
+		left:10%;
+		top:50%;
+		margin-top:-10px;
+		border:1px solid $border-c;
+		border-radius:50%;
+		
+	}
+	input:checked+label{
+			&:before{
+				content:"";
+				display:inline-block;
+				width:14px;
+				height:8px;
+				border-left:2px solid $border-c;
+				border-bottom:2px solid $border-c;
+				@include pos;
+				left:3px;
+				bottom:6px;
+				z-index:99;	
+				-webkit-transform:rotate(-45deg);
+			}
+		}
+	label{
+		&.checked{
+			&:before{
+				content:"";
+				display:inline-block;
+				width:14px;
+				height:8px;
+				border-left:2px solid $border-c;
+				border-bottom:2px solid $border-c;
+				@include pos;
+				left:2px;
+				bottom:6px;
+				-webkit-transform:rotate(-45deg);
+			}
+		}
+	}
+	input{
+		z-index:2;
+		opacity:0;
+		margin-right:15px;
+	}
+}
+
+.menu{
+	width:100%;
+	float:left;
+	margin-top:25px;
+	padding:10px 8px;
+	border:1px solid $border-c;
+	@include pos(relative);
+	.arrow{
+		width:15px;
+		height:15px;
+		display:inline-block;
+		border-top:1px solid $border-c;
+		border-left:1px solid $border-c;
+		@include pos;
+		right:32%;
+		top:-8px;
+		-webkit-transform:rotate(45deg);
+		background:#fff3bf;
+	}
+	.item{
+			
+			border-radius:8px;
+			float:left;
+			margin:1%;
+			@include pos(relative);
+			width:30%;
+			height:30px;
+			input,label{
+				@include pos;
+				display:inline-block;
+				width:100%;
+				height:30px;
+				border-radius:8px;
+				left:0;
+				top:0;
+				text-align:center;
+				line-height:30px;
+				font-size:0.9rem;
+			}
+			label{
+				border:1px solid $border-c;
+			}
+			input{
+				z-index:2;
+				opacity:0;
+			}
+			input:checked+label{
+				background:$high-c;
+				color:#fff;
+				border:1px solid $high-c;
+			}
+		}
+	
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+@import "public.scss";
+.gender-dl{
+	width:50%;
+	height:100%;
+	float:left;
+	dt{
+		width:60px;
+		height:80px;
+		margin-left:25%;
+		margin-top:20%;
+		margin-bottom:20px;
+		img{
+			width:100%;
+			height:100%;
+		}
+	}
+	dd{
+		width:100%;
+		p{
+			text-align:center;
+			font-size:.8rem;
+			line-height:1.5rem;
+		}
+		 .gender-ch{
+					input{
+						width:20px;
+						height:20px;
+						border:1px solid $border-c;
+						border-radius:50%;
+						@include pos(relative);
+						&:checked{
+							&:before{
+								content:"";
+								width:14px;
+								height:8px;
+								border-left:2px solid $border-c;
+								border-bottom:2px solid $border-c;
+								@include pos;
+								left:50%;
+								top:3px;
+								margin-left:-7px;
+								-webkit-transform:rotate(-45deg);
+							}
+						}
+					}
+				}
+
+	}
+}

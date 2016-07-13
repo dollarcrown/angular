@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--声明文档使用的字符编码-->
+    <meta charset="UTF-8">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <!--设置视口的宽度=设备的宽度；初始化比例：1:1；最大，最小比例为：1:1；禁止用户缩放或放大-->
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!--禁止自动识别电话号码-->
+    <meta name='format-detection' content='telephone=no'>
+    <!--禁止自动识别邮箱-->
+    <meta name='format-detection' content='email=no'>
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/question.css">
+    <link rel="stylesheet" href="../css/dialog.css">
+    <link rel="stylesheet" href="../css/gender.css">
+    <link rel="stylesheet" href="../css/foot.css">
+    <link rel="stylesheet" href="../css/unlike.css">
+    <link rel="stylesheet" href="../css/result.css">
+</head>
+<body ng-app='myApp' ng-init='falg=false;Hfalg=false;'>
+    <div class="container" ng-view>
+        <a href="#/home">首页</a>
+    </div>
+</body>
+</html>
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script src="http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
+<script src='../js/zepto.min.js'></script>
+<script src='../js/dialog.js'></script>
+<script>
+    var app=angular.module('myApp',['ngRoute']);
+    var defaults=0;
+    app.config(['$routeProvider',function($routeProvider){
+        $routeProvider
+            .when('/home',{templateUrl:'home.html'})
+            .when('/gender',{templateUrl:'gender.html'})
+            .when('/history',{templateUrl:'history.html',
+                controller:history
+            })
+            .when('/foot',{templateUrl:'foot.html',
+                controller:food
+            })
+            .when('/unlike',{templateUrl:'unlike.html',
+                controller:unlike
+            })
+            .when('/question',{templateUrl:'question.html',
+                   controller:question 
+            })
+            .when('/result',{templateUrl:'result.html',
+                controller:result
+            })
+            .otherwise({redirectTo:'/home'})
+    }])
+    function question($scope,$http,$rootScope){
+        $scope.qClick=function(){
+           $('.item').each(function(){
+               if($(this).find(':checked').size()==0){
+                    defaults++;  
+               }
+           })
+           if(defaults>0){
+                $.dialog({
+                    msg:"亲，每个选项都必须填写完整哦,这样才能保证测试的准确性哦",
+                    btn:[{text:"继续",className:"btn"}],
+                    btn1Event:function(){
+                        $('.btn').find('a').attr("href",'javescript:;');
+                        defaults=0;
+                    }
+                })
+           }else{
+                $('.btnQ').attr("href",'#result');
+           }
+        }
+    }
+    function food($scope,$rootScope){
+        $scope.have=function(){
+            $scope.falg=false
+        }
+        $scope.none=function() {
+             $scope.falg=true
+        }
+    }
+    function history($scope,$http,$rootScope){
+        $http.get("data.json")
+        .success(function(response) {
+            $rootScope.result=response
+        })
+        $scope.you=function(){
+            $scope.Hfalg=false
+        }
+         $scope.wu=function(){
+             $scope.Hfalg=true
+        }
+    }
+    function unlike($scope,$rootScope){
+        $scope.test=function(){
+            $.dialog({
+                msg:"亲，我们为您准备了60道体质测试题，请耐心如实答题，获取真是体质结果",
+                btn:[{text:"开始测试",className:"btn"}],
+                btn1Event:function(){
+                    $('.btn').find('a').attr("href",'#/question');
+                }
+            })
+        }
+       
+    }
+    function result($scope){
+            $scope.myVarPhysique=true;
+            $scope.myVarresultEat=true;
+            $scope.myVarresultNoEat=true;
+            $scope.myVarReadAll=false;
+            $scope.resultTitle=true;
+            $scope.resultPTop2=true;
+            // 体质
+            $scope.resultPhysique=function(){
+                $scope.myVarPhysique=!$scope.myVarPhysique;
+                $scope.resultTitle=false;
+                $scope.physiqueJiao=true;
+                $scope.resultPTop1=true;
+                $scope.resultPTop2=false;
+            }
+            //易吃
+            $scope.resultEat=function(){
+                $scope.myVarresultEat=!$scope.myVarresultEat;
+                 $scope.physiqueP=!$scope.physiqueP;
+            }
+            //不易吃
+            $scope.resultNoEat=function(){
+                $scope.myVarresultNoEat=!$scope.myVarresultNoEat;
+                 $scope.physiqueP=!$scope.physiqueP;    
+            }
+            //阅读全文
+            $scope.readyAll=function(){
+                $scope.myVarReadAll=!$scope.myVarReadAll;
+            }
+
+            // title返回
+            $scope.resultTitleBack=function(){
+                $scope.myVarPhysique=true;
+                $scope.resultTitle=true;   // 返回按钮隐藏
+                $scope.physiqueJiao=false; // 角显示
+                $scope.myVarReadAll=false; // 阅读全部
+                $scope.resultPTop1=false; // 头部1
+                $scope.resultPTop2=true;  // 头部2
+            }
+
+    }
+</script>

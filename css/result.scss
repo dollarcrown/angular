@@ -1,0 +1,215 @@
+@charset "UTF-8";
+@import "public.scss";
+
+.back-hide{
+	display:none;
+}
+
+@mixin bottomArrow($c){//三角 向下
+	&::after{
+		content:"";
+		display:inline-block;
+		width:8px;
+		height:8px;
+		border-bottom:1px solid $c;
+		border-right:1px solid $c;
+		-webkit-transform:rotate(45deg);
+		-webkit-transition:.1s;
+		margin:0 7px 4px;
+	}
+}
+@mixin topArrow($c){//三角 向下
+	&::after{
+		content:"";
+		display:inline-block;
+		width:8px;
+		height:8px;
+		border-top:1px solid $c;
+		border-right:1px solid $c;
+		-webkit-transform:rotate(-45deg);
+		-webkit-transition:.1s;
+		margin:0 7px -2px;
+	}
+}
+.result-container{
+	width:100%;
+	height:100%;
+	background:#fbfbfb;
+	@include pos(relative);
+	.title{
+		@include pos;
+		z-index:99;
+	}
+
+}
+/* 整个盒子 */
+.result-body{
+	width:100%;
+	height:100%;
+	padding-top:44px;
+	overflow:auto;
+	.result-jiao{
+		@include pos;
+		background:url(../img/back.png) no-repeat;
+		background-size:9px 18px;
+		right:15px;
+		top:50%;
+		margin-top:-10px;
+		width:9px;
+		height:18px;
+		-webkit-transform:rotate(180deg);
+	}
+}
+/* 体质头部 */
+.result-physique{
+    margin-bottom:15px;
+	.result-physique-top{
+		background:$high-c;
+		padding:20px 23px;
+		color:#fff;
+		@include pos(relative);
+		.result-physique-head{
+			font-size:12px;
+		}
+		.result-physique-title{
+			font-size:15px;
+		}
+		.result-physique-introduce{
+		font-size:12px;
+			color:#ffc5c3;
+		}
+		
+	}	
+}
+
+/*  体质内容 */
+.result-physique-content{
+	background:#fff;
+	@include pos(relative);
+	&::before{
+		content:'';
+		@include pos;
+		width:10px;
+		height:14px;
+		background:#fff;
+		-webkit-transform:rotate(45deg);
+		top:-6px;
+		left:50%;
+		margin-left:-5px;
+	}
+	ul{
+			
+		color:#333;
+		li{
+			font-size:12px;
+			line-height:1.6;
+		}
+	}
+	.result-physique-content-duan{
+		padding:23px 23px 10px 23px;
+		li{
+			@include pos(relative);
+			span{
+				@include pos;
+				left:0;
+			}
+			p{
+				padding-left:60px;
+			}
+		}
+	}
+
+	.result-physique-content-question{
+		padding:0 23px 23px 23px;
+		p{
+			background:url(../img/star.png) no-repeat left center;
+			background-size:9px 9px;
+			line-height:35px;
+			padding-left:15px;
+		}
+		li{
+			list-style-type:disc;
+			margin-left:18px;
+
+		}
+	}
+
+	.result-ready-all{
+		padding:0;
+		height:44px;
+		line-height:44px;
+		width:100%;
+		text-align:center;
+		color:#333;
+		font-size:13px;
+		border-top:1px solid #eee;
+		border-bottom:1px solid #eee;
+		@include bottomArrow(#999);
+		
+	}
+	.readyAllJiao{
+		@include topArrow(#999);
+		&::after{
+			border-bottom-color:#fFF;
+		}
+	}
+
+	
+
+}
+
+/* 吃，不吃的头部 */
+.result-eat-top,.result-no-eat-top{
+	height:44px;
+	width:100%;
+	background:#fff;
+	line-height:44px;
+	padding:0 23px;
+	color:$high-c;
+	border-bottom:1px solid #eee;
+	@include pos(relative);
+	.result-jiao{
+		-webkit-transform:rotate(-90deg);
+	}
+	.result-jiao-bj{
+		-webkit-transform:rotate(90deg);
+	}
+}
+/* 吃，不吃的内容 */
+.result-eat,.result-no-eat{
+	.result-eat-content,.result-no-eat-content{
+		padding:10px;
+		width:100%;
+		div{
+			width:50%;
+			float:left;
+			text-align:center;
+			img{
+				width:135px;
+          		height:135px;
+
+			}
+			p{
+				width:95%;
+	       		height:35px;
+	       	    line-height: 35px;
+	       		overflow: hidden;
+	       		white-space: nowrap;
+	       		text-overflow: ellipsis;
+	       		font-size: 14px;
+	       		color:#333;
+	       		text-align:center;
+       		}
+
+		}
+	}
+}
+
+
+
+.clear{
+	clear:both;
+}
+
+
+

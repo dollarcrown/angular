@@ -1,0 +1,42 @@
+@import "public.scss";
+
+
+.unlike-check{
+		@include full;
+		.unlike-ch{
+					display:inline-block;
+					@include pos(relative);
+					width:50%;
+					float:left;
+					color:$text-c;
+					padding-left:3.5rem;
+					font-size:0.9rem;
+					margin-bottom:0.3rem;
+					input{
+						width:15px;
+						height:15px;
+						@include pos;
+						left:1.5rem;
+						border:1px solid $border-c;
+						&:checked{
+							&:before{
+								content:"";
+								@include pos;
+								width:14px;
+								height:8px;
+								border-left:2px solid $border-c;
+								border-bottom:2px solid $border-c;
+								z-index:99;	
+								-webkit-transform:rotate(-45deg);
+							}
+						}
+					}
+					label{
+						@include pos;
+						width:100%;
+						height:100%;
+						left:0;
+					}
+				}
+
+	}
